@@ -1,10 +1,32 @@
-<div class="course-card">
-
-    <div class="course-title">
-        <h2>{{course.description}}</h2>
+<div class="course-card" [ngClass]="cardClass()">
+    
+  
+  <div class="course-title" [ngStyle]="cardStyles()">
+      {{index}} {{course.description}}
     </div>
-    <img width="300" alt="Angular Logo"
+
+    @if (course.iconUrl) {
+      <img width="300" alt="Angular Logo"
          [src]="course.iconUrl">
+    }
+    @else {
+       <h2>No Image available</h2>
+    }
+    <br>
+   @switch (course.category) {
+    @case ('BEGINNER') {
+      <div class="category">Beginner</div>
+    }
+    @case ('ADVANCED') {
+      <div class="category">Advanced</div>
+    }
+    @case ('DEVELOPER') {
+      <div class="category">Developer</div>
+    }
+    @default {
+      <div class="category">Unknown</div>
+    }
+   }
 
     <div class="course-description">
         {{course.longDescription}}

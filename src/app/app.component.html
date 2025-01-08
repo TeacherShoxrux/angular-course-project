@@ -7,9 +7,18 @@
 
 
 <div class="courses">
-    @for (course of courses; track course.id) {
-        <course-card  (courseSelected)="onCardSelected($event)" [course]="course"/>
+    @for (course of courses; track course.id; let index = $index; let count = $count) {
+        <course-card 
+        [index]="index" 
+        [course]="course"
+        (courseSelected)="onCardSelected($event)" />
     }
+    @empty {
+        <div class="no-courses">
+          <h1>  No courses available yet.</h1>
+        </div>
+    }
+     
 
 
    
