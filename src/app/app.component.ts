@@ -13,7 +13,6 @@ export class AppComponent {
 console.log('Card Clicked'+course.description);
 }
     courses = COURSES;
-    js_course:Course=COURSES[0]
-    ng_course:Course=COURSES[2]
-    rc_course:Course=COURSES[1]
+    course = COURSES[0];
+    startDate = new Date(2000,0,1);
 }
