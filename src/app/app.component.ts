@@ -9,7 +9,10 @@ import { Course } from './model/course';
     standalone: false
 })
 export class AppComponent {
-
+    onCardSelected(course:Course){ 
+console.log('Card Clicked'+course.description);
+}
+    courses = COURSES;
     js_course:Course=COURSES[0]
     ng_course:Course=COURSES[2]
     rc_course:Course=COURSES[1]

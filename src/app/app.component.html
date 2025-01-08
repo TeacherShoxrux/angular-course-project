@@ -7,10 +7,11 @@
 
 
 <div class="courses">
+    @for (course of courses; track course.id) {
+        <course-card  (courseSelected)="onCardSelected($event)" [course]="course"/>
+    }
 
-    <course-card [course]="js_course"> </course-card>
-    <course-card [course]="ng_course"> </course-card>
-    <course-card [course]="rc_course"> </course-card>
+
    
 
 </div>
