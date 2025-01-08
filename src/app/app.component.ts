@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {COURSES} from '../db-data';
+import { Course } from './model/course';
 
 @Component({
     selector: 'app-root',
@@ -9,5 +10,7 @@ import {COURSES} from '../db-data';
 })
 export class AppComponent {
 
-
+    js_course:Course=COURSES[0]
+    ng_course:Course=COURSES[2]
+    rc_course:Course=COURSES[1]
 }
